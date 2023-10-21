@@ -6,11 +6,17 @@ import EmptyMsg from "../Components/EmptyMsg"
 
 const Landing = () => {
 	const {courses} = useSelector((state) => state.courses)
-	return courses.length < 0 ? (
+	return courses.length !== 0 ? (
             <FlatList
             data={courses}
             renderItem={({ item }) => (
-                <CourseItem image={item.image} price={item.price} title={item.title} />
+                <CourseItem i
+                mage={item.image} 
+                price={item.price} 
+                title={item.title}
+                viewDetails={() => alert('details')}
+                addToCart={()=> alert('panier')}
+                />
             )}
             keyExtractor={(item) => item.id}
             />
