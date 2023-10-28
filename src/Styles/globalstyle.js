@@ -3,5 +3,6 @@ export default {
     white: '#ffff',
     grey: '#ccc',
     darkGrey: '#333',
-    red: '#e55039'
+    red: '#e55039',
+    lightOrange: 'moccasin'
 }

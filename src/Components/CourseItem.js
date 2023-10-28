@@ -53,8 +53,12 @@ const styles = StyleSheet.create({
 		padding: 10,
 	},
 	image: {
-		width: "100%",
+		width: "calc(100% - 10px)",
 		height: "100%",
+		borderTopRightRadius: 5,
+		borderTopLeftRadius: 5,
+		marginTop: 5,
+		marginHorizontal: 5
 	},
 	title: {
 		fontSize: 20,
