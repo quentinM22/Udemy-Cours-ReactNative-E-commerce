@@ -5,6 +5,7 @@ import { MaterialIcons, FontAwesome5 } from '@expo/vector-icons';
 import CoursesNavigator from './CoursesStackNav';
 import  CartNavigator  from './CartStackNav'
 import PaymentsNavigator from './PaymentsStackNav';
+import UserNavigator from './UserStackNav';
 
 const Drawer = createDrawerNavigator()
 
@@ -17,7 +18,7 @@ const DrawerNavigator = () => {
             component={CoursesNavigator}
             options={{
                 title: "Catalogue",
-                drawmerIcon: () => <MaterialIcons name="menu" size={24} color="black" />
+                drawerIcon: () => <MaterialIcons name="menu" size={24} color="black" />
             }}
         />
           <Drawer.Screen
@@ -25,7 +26,7 @@ const DrawerNavigator = () => {
             component={CartNavigator}
             options={{
                 title: "Panier",
-                drawmerIcon: () => <FontAwesome5 name="shopping-basket" size={24} color="black" />
+                drawerIcon: () => <FontAwesome5 name="shopping-basket" size={24} color="black" />
             }}
         />
         <Drawer.Screen
@@ -33,7 +34,15 @@ const DrawerNavigator = () => {
             component={PaymentsNavigator}
             options={{
                 title: "Achats",
-                drawmerIcon: () => <FontAwesome5 name="credit-card" size={24} color="black" />
+                drawerIcon: () => <FontAwesome5 name="credit-card" size={24} color="black" />
+            }}
+        />
+          <Drawer.Screen
+            name='User'
+            component={UserNavigator}
+            options={{
+                title: "Mes cours",
+                drawerIcon: () => <FontAwesome5 name="user" size={24} color="black" />
             }}
         />
     </Drawer.Navigator>
