@@ -7,6 +7,7 @@ import moment from "moment"
 
 const initialState = {
 	courses: DATA,
+	userCourses:DATA.filter(e => e.instructorId === '1'),
   	cart: [],
 	total: 0,
 	payments: []
@@ -56,9 +57,25 @@ export const dataSlice = createSlice({
 			state.payments = [... state.payments, newPayment]
 			state.cart = []
 			state.total = 0
+		},
+		deleteCourse:(state, action) => {
+			const course = action.payload // === item.id
+			const indexCourse = state.userCourses.findIndex(e => e.id === course.id)
+			const newUserCourses = [... state.userCourses]
+			newUserCourses.splice(indexCourse, 1)
+			state.userCourses = newUserCourses
+			// Liste Catalogue
+			const newCourse = state.courses.filter(e => e.id != course.id)
+			state.courses = newCourse
+			// Panier
+			const newCartCourses = [... state.cart]
+			const indexCart = state.cart.findIndex(e => e.id === course.id)
+			newCartCourses.splice(indexCart, 1)
+			state.cart = newCartCourses
+			state.total -= course.price
 		}
 	},
 })
-export const { addToCart, removeCourseCart, addPayement } = dataSlice.actions
+export const { addToCart, removeCourseCart, addPayement, deleteCourse } = dataSlice.actions
 
 export default dataSlice.reducer

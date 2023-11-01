@@ -6,7 +6,7 @@
 		"image": "https://cdn.pixabay.com/photo/2023/09/26/22/15/chatgpt-8278302_960_720.png",
 		"price": 99.99,
 		"selected": false,
-		"instructorId": "1"
+		"instructorId": "2"
 	},
 	{
 		"id": "2",
@@ -24,7 +24,7 @@
 		"image": "https://cdn.pixabay.com/photo/2020/08/08/06/28/marketing-5472243_960_720.png",
 		"price": 29.49,
 		"selected": false,
-		"instructorId": "1"
+		"instructorId": "2"
 	},
 	{
 		"id": "4",
@@ -33,7 +33,7 @@
 		"image": "https://cdn.pixabay.com/photo/2020/08/08/06/23/website-marketing-5472235_960_720.png",
 		"price": 49.29,
 		"selected": false,
-		"instructorId": "1"
+		"instructorId": "3"
 	},
 	{
 		"id": "5",
@@ -42,7 +42,7 @@
 		"image": "https://cdn.pixabay.com/photo/2020/07/09/20/15/infographic-5388658_960_720.png",
 		"price": 199.99,
 		"selected": false,
-		"instructorId": "1"
+		"instructorId": "3"
 	},
 	{
 		"id": "6",
@@ -51,7 +51,7 @@
 		"image": "https://cdn.pixabay.com/photo/2021/03/20/21/31/presentation-6110845_960_720.png",
 		"price": 9.99,
 		"selected": false,
-		"instructorId": "1"
+		"instructorId": "5"
 	},
 	{
 		"id": "7",
@@ -60,7 +60,7 @@
 		"image": "https://cdn.pixabay.com/photo/2020/08/08/06/46/e-commerce-5472254_960_720.png",
 		"price": 29.99,
 		"selected": false,
-		"instructorId": "1"
+		"instructorId": "5"
 	},
 	{
 		"id": "8",

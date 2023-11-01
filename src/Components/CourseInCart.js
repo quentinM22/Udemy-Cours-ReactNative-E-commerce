@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     coursesPrice:{
        textAlign: 'right',
        paddingRight: 10,
-       width: '40%' 
+       width: '20%' 
     }
 })
 
