@@ -73,9 +73,50 @@ export const dataSlice = createSlice({
 			newCartCourses.splice(indexCart, 1)
 			state.cart = newCartCourses
 			state.total -= course.price
+		},
+		updateCourse:(state, action)=>{
+			const course = action.payload
+			const indexCourse = state.userCourses.findIndex(e => e.id === course.courseId)
+			const courseUpdate = {
+				"id": course.courseId,
+				"title": course.title,
+				"description": course.description,
+				"image": course.img,
+				"price": course.price,
+				"selected": state.userCourses[indexCourse].selected,
+				"instructorId": state.userCourses[indexCourse].instructorId,
+			}
+			const newUserCourses = [...state.userCourses ]
+			newUserCourses[indexCourse] = courseUpdate
+			state.userCourses =  newUserCourses
+
+			
+
+			const indexDataCourse = state.courses.findIndex(e => e.id === course.courseId)
+			// console.log(indexDataCourse)
+			const newDataCourse = [...state.courses]
+			newDataCourse[indexDataCourse] = courseUpdate
+			state.courses = newDataCourse
+		},
+		addCourse:(state, action) => {
+			const course = action.payload
+			const newCourse = {
+				"id": Date.now().toString(),
+				"title": course.title,
+				"description": course.description,
+				"image": course.img,
+				"price": course.price,
+				"selected": false,
+				"instructorId": '1',
+			}
+			const newUserCourses = [...state.userCourses]
+			state.userCourses = newUserCourses.concat(newCourse)
+
+			const newDataCourse = [...state.courses]
+			state.courses = newDataCourse.concat(newCourse)
 		}
 	},
 })
-export const { addToCart, removeCourseCart, addPayement, deleteCourse } = dataSlice.actions
+export const { addToCart, removeCourseCart, addPayement, deleteCourse, updateCourse, addCourse } = dataSlice.actions
 
 export default dataSlice.reducer
